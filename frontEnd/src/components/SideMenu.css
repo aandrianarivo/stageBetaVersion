@@ -1,0 +1,40 @@
+
+
+.active{
+    background: #121318;
+    border-radius: 20px ;
+    opacity: 0.75;
+
+}
+.nav-link:hover {
+    background-color: #121318;
+    /* #8f8f8f */
+    border-radius: 20px ;
+    opacity: 0.75;
+
+}
+.nav-link{
+    border-radius: 20px ;
+}
+li{
+    color:#121318;
+
+}
+.fixed-side-menu {
+    position: fixed;
+    padding: 0;
+    /* background-color: #343a40; ou la couleur de fond souhaitée */
+    /* Ajoute d'autres styles au besoin */
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  

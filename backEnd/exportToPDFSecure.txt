@@ -1,0 +1,30 @@
+const handleExportToExcel = (products) => {
+  const worksheet = XLSX.utils.json_to_sheet(products);
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+
+  const password = 'votreMotDePasse'; // Remplacez par le mot de passe souhaité
+  const excelOptions = {
+    bookType: 'xlsx',
+    bookSST: false,
+    type: 'binary',
+    password: password,
+  };
+
+  const excelData = XLSX.write(workbook, excelOptions);
+  const blob = new Blob([s2ab(excelData)], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'myData.xlsx';
+  link.click();
+};
+
+// Fonction pour convertir une chaîne binaire en tableau d'octets
+function s2ab(s) {
+  const buf = new ArrayBuffer(s.length);
+  const view = new Uint8Array(buf);
+  for (let i = 0; i !== s.length; ++i) view[i] = s.charCodeAt(i) & 0xFF;
+  return buf;
+}

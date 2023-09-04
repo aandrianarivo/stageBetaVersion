@@ -1,0 +1,19 @@
+/* Product.css */
+
+.card-container {
+    display: flex; /* Utiliser Flexbox pour aligner les cartes horizontalement */
+    flex-wrap: wrap; /* Permettre aux cartes de passer à la ligne lorsque l'espace est insuffisant */
+    gap: 20px; /* Espacement entre les cartes */
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex: 0 0 calc(33.33% - 20px); /* Pour que chaque carte occupe environ 33.33% de l'espace */
+  }
+
+  .cust-add-btn{
+    height: 40px;
+    width: 108px;
+  }
+  
